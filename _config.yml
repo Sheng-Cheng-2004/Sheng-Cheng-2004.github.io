@@ -21,7 +21,7 @@ repository               : "Sheng-Cheng-2004/Sheng-Cheng-2004.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   name             : "Sheng Cheng"
   pronouns         : "he/his"  
   bio              : "Undergraduate in Economics"
