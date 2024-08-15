@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Sheng Cheng / Personal Page"
+title                    : "About me"
 title_separator          : "-"
 name                     : &name "Sheng Cheng"
 description              : &description "personal description"
@@ -21,9 +21,9 @@ repository               : "Sheng-Cheng-2004/Sheng-Cheng-2004.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Sheng Cheng"
-  pronouns         : # example: "he/his"  
+  pronouns         : "he/his"  
   bio              : "Undergraduate in Economics"
   location         : "Shanghai, China"
   employer         : "Shanghai Jiao Tong University"
