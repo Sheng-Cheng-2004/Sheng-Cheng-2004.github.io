@@ -7,3 +7,4 @@ redirect_from:
   - /about.html
 ---
 I am an undergraduate student in Shanghai Jiao Tong University, Antai College of Economics and Management, major in **Economics**
+
