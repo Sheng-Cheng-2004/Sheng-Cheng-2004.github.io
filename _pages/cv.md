@@ -12,23 +12,15 @@ redirect_from:
 Education
 ======
 * B.S. in Economics, Shanghai Jiao Tong University, 2022-
+  * Courses: Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc.
+* Exchange, McGill University, 2024.08-2024.12
+  * Courses: Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative.
+
+---
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Analyst, Orient Securities Department of FICC, 2024.06-2024.08
   
 Skills
 ======
