@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Sheng Cheng's personal page"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
