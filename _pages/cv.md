@@ -26,6 +26,7 @@ Competitions
 ======
 * 2024 Mathematical Contest in Modeling，MCM, &ensp; 2024.02
   *Problem C(data insights): <br> [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+
   *[Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
 
 Skills
@@ -33,7 +34,7 @@ Skills
 * Languages
   * Mandarin: native speaker
   * English: fluent <br>
-    TOEFL 104 (reading 29, listening 29, writing 24, speaking 22)
+    TOEFL 104 (reading 29, listening 29, writing 24, speaking 22)<br>
     CET6 606
 * Coding  
   Python, VBA, Julia, Java, Stata, TB
