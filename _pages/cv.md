@@ -25,13 +25,14 @@ Work experience
 Competitions
 ======
 * 2024 Mathematical Contest in Modeling，MCM,    2024.02
-  *Problem C(data insights): Game Changers: Unraveling the Momentum Mystery in Tennis
+  *Problem C(data insights): <br> [Game Changers: Unraveling the Momentum Mystery in Tennis]()
+  *[Honorable Mentioned Prize]()
   
 Skills
 ======
 * Languages
   * Mandarin: native speaker
-  * English: fluent
+  * English: fluent <br>
     TOEFL 104 (reading 29, listening 29, writing 24, speaking 22)
     CET6 606
 * Coding  
