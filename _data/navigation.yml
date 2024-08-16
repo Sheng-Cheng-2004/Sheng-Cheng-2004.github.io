@@ -8,6 +8,9 @@ main:
   - title: "Courses"
     url: /courses/
 
+  - title: "Readings"
+    url: /readings/
+
   - title: "CV"
     url: /cv/
 
