@@ -23,16 +23,16 @@ Work experience
 * Intern, Orient Securities Department of FICC, &ensp; June, 2024 - August, 2024
   * Participate in the testing and validation of valuation models for over-the-counter derivatives, and conduct backtesting analysis based on historical market data.
 
-    View [Option Pricing Model and Hedge Strategy Backtesting](https://github.com/Sheng-Cheng-2004/Option-Hedge-Backtesting) github repository.
+    View [_Option Pricing Model and Hedge Strategy Backtesting_](https://github.com/Sheng-Cheng-2004/Option-Hedge-Backtesting) github repository.
   * Engage in the structuring and innovation of over-the-counter derivative products, develop feasible product solutions.
   * Participate in carbon emission rights business, collect and organize relevant supporting materials, and assist in business innovation and market research analysis of carbon emission rights.
   * Regularly organize commodity market data and write market research analysis reports.
  
-    Download [Commodity Futures Research Framework and Analysis Report (Self-Prepared)](files/每周小结8.12（补充豆粕）.pdf).
+    Download [_Commodity Futures Research Framework and Analysis Report (Self-Prepared)_](files/每周小结8.12（补充豆粕）.pdf).
     
   * Study basic quantitative trading strategies for commodity futures, perform strategy backtesting using TradeBlazer, and write a learning report.
 
-    Download [Turtle Trader Learning Report](files/海龟交易法学习笔记（补充净值曲线和优化）.pdf)
+    Download [_Turtle Trader Learning Report_](files/海龟交易法学习笔记（补充净值曲线和优化）.pdf)
 
 Competitions
 ======
