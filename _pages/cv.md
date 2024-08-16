@@ -25,7 +25,7 @@ Work experience
 
     View [_Option Pricing Model and Hedge Strategy Backtesting_](https://github.com/Sheng-Cheng-2004/Option-Hedge-Backtesting) github repository.
   * Engage in the structuring and innovation of over-the-counter derivative products, develop feasible product solutions.
-  * Participate in carbon emission rights business, collect and organize relevant supporting materials, and assist in business innovation and market research analysis of carbon emission rights.
+  * Participate in carbon emission rights business, collect and organize relevant supporting materials.
   * Regularly organize commodity market data and write market research analysis reports.
  
     Download [_Commodity Futures Research Framework and Analysis Report (Self-Prepared)_](files/每周小结8.12（补充豆粕）.pdf).
