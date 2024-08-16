@@ -25,8 +25,10 @@ Work experience
 Competitions
 ======
 * 2024 Mathematical Contest in Modeling，MCM, &ensp; 2024.02
+  *Problem C(data insights):
 
-  *Problem C(data insights): <br> [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+  [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+  
   *[Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
 
 Skills
