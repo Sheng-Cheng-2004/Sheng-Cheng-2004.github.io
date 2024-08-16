@@ -12,9 +12,9 @@ redirect_from:
 Education
 ======
 * B.S. in Economics, Shanghai Jiao Tong University, &ensp; 2022-
-  * Courses: Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc.
+  * **Courses:** Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc.
 * Exchange, McGill University, &ensp; 2024.08-2024.12
-  * Courses: Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative.
+  * **Courses:** Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative.
 
 ---
 
@@ -25,9 +25,9 @@ Work experience
 Competitions
 ======
 * 2024 Mathematical Contest in Modeling，MCM, &ensp; 2024.02
-  * Problem C(data insights):
+  * Problem C (data insights):
 
-  [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+  Download essay: [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
   
   * [Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
 
