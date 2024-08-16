@@ -11,23 +11,23 @@ redirect_from:
 
 Education
 ======
-* B.S. in Economics, Shanghai Jiao Tong University, 2022-
+* B.S. in Economics, Shanghai Jiao Tong University, &ensp; 2022-
   * Courses: Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc.
-* Exchange, McGill University, 2024.08-2024.12
+* Exchange, McGill University, &ensp; 2024.08-2024.12
   * Courses: Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative.
 
 ---
 
 Work experience
 ======
-* Analyst, Orient Securities Department of FICC,    2024.06-2024.08
+* Analyst, Orient Securities Department of FICC, &ensp; 2024.06-2024.08
 
 Competitions
 ======
-* 2024 Mathematical Contest in Modeling，MCM,    2024.02
-  *Problem C(data insights): <br> [Game Changers: Unraveling the Momentum Mystery in Tennis]()
-  *[Honorable Mentioned Prize]()
-  
+* 2024 Mathematical Contest in Modeling，MCM, &ensp; 2024.02
+  *Problem C(data insights): <br> [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+  *[Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
+
 Skills
 ======
 * Languages
