@@ -27,7 +27,7 @@ Competitions
 * 2024 Mathematical Contest in Modeling，MCM, &ensp; Feburary, 2024
   * Problem C (data insights):
 
-  Download essay: [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+    Download essay: [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
   
   * [Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
 
