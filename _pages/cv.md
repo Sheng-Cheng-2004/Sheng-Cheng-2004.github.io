@@ -28,11 +28,11 @@ Work experience
   * Participate in carbon emission rights business, collect and organize relevant supporting materials, and assist in business innovation and market research analysis of carbon emission rights.
   * Regularly organize commodity market data and write market research analysis reports.
  
-    Download [Commodity Futures Research Framework and Analysis Report (Self-Prepared)]().
+    Download [Commodity Futures Research Framework and Analysis Report (Self-Prepared)](files/每周小结8.12（补充豆粕）.pdf).
     
   * Study basic quantitative trading strategies for commodity futures, perform strategy backtesting using TradeBlazer, and write a learning report.
 
-    Download [Turtle Trader Learning Report]()
+    Download [Turtle Trader Learning Report](files/海龟交易法学习笔记（补充净值曲线和优化）.pdf)
 
 Competitions
 ======
