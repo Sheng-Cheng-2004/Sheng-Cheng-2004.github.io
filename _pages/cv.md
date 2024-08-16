@@ -20,35 +20,24 @@ Education
 
 Work experience
 ======
-* Analyst, Orient Securities Department of FICC, 2024.06-2024.08
+* Analyst, Orient Securities Department of FICC,    2024.06-2024.08
+
+Competitions
+======
+* 2024 Mathematical Contest in Modeling，MCM,    2024.02
+  *Problem C(data insights): Game Changers: Unraveling the Momentum Mystery in Tennis
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Languages
+  * Mandarin: native speaker
+  * English: fluent
+    TOEFL 104 (reading 29, listening 29, writing 24, speaking 22)
+    CET6 606
+* Coding  
+  Python, VBA, Julia, Java, Stata, TB
+* Software  
+  Microsoft Office(Excel, Powerpoint, etc.), Wind, TradeBlazer, Photoshop, Lightroom
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
+
