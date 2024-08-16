@@ -12,7 +12,7 @@ redirect_from:
 Education
 ======
 * B.S. in Economics, Shanghai Jiao Tong University, &ensp; 2022 -
-  * **Courses:** _Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc._
+  * **Courses:** _Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, Ordinary Differential Equation, etc._
 * Exchange, McGill University, &ensp; August, 2024 - December, 2024
   * **Courses:** _Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative._
 
