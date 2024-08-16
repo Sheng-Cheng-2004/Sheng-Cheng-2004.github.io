@@ -20,7 +20,7 @@ Education
 
 Work experience
 ======
-* Analyst, Orient Securities Department of FICC, &ensp; June, 2024 - August, 2024
+* Intern, Orient Securities Department of FICC, &ensp; June, 2024 - August, 2024
 
 Competitions
 ======
