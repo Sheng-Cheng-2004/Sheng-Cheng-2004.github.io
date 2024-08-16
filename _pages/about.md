@@ -8,7 +8,7 @@ redirect_from:
 ---
 I am an undergraduate student in Shanghai Jiao Tong University, Antai College of Economics and Management, major in **Economics**
 
-*** Reach me at:
+### Reach me at:
 
 * Email: [_cs20041110@gmail.com_](mailto:cs20041110@gmail.com) / [_cs__sjtu@sjtu.edu.cn_](mailto:cs__sjtu@sjtu.edu.cn)
 * Phone: _(+86)15000108116_
