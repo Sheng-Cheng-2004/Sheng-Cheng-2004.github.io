@@ -12,9 +12,9 @@ redirect_from:
 Education
 ======
 * B.S. in Economics, Shanghai Jiao Tong University, &ensp; 2022 -
-  * **Courses:** Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc.
+  * **Courses:** _Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, etc._
 * Exchange, McGill University, &ensp; August, 2024 - December, 2024
-  * **Courses:** Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative.
+  * **Courses:** _Combinatorial Optimization, Algorithm and Data Sructure, Operation Management, Financial Derivative._
 
 ---
 
@@ -27,17 +27,17 @@ Competitions
 * 2024 Mathematical Contest in Modeling，MCM, &ensp; Feburary, 2024
   * Problem C (data insights):
 
-    Download essay: [Game Changers: Unraveling the Momentum Mystery in Tennis](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
+    Download essay: [_Game Changers: Unraveling the Momentum Mystery in Tennis_](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
   
-  * [Honorable Mentioned Prize](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
+  * [_Honorable Mentioned Prize_](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
 
 Skills
 ======
 * Languages
-  * Mandarin: native speaker
-  * English: fluent <br>
-    TOEFL 104 (reading 29, listening 29, writing 24, speaking 22)<br>
-    CET6 606
+  * **Mandarin**: native speaker
+  * **English**: fluent <br>
+    **TOEFL**: 104 (reading 29, listening 29, writing 24, speaking 22)<br>
+    **CET6**: 606
 * Coding  
   Python, VBA, Julia, Java, Stata, TB
 * Software  
