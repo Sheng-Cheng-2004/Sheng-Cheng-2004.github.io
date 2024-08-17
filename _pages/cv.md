@@ -52,7 +52,7 @@ Skills
     TOEFL: 104 (reading 29, listening 29, writing 24, speaking 22)
     
     CET6: 606
-* **Coding**
+* **Coding**  
   Python, VBA, Julia, Java, Stata, TB
 * **Software**  
   Microsoft Office(Excel, Powerpoint, etc.), Wind, TradeBlazer, Photoshop, Lightroom
