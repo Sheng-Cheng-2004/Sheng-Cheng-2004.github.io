@@ -20,14 +20,12 @@ This page collects all papers, textbooks, lecture notes, etc. that I am interest
 
 ## Books
 
-<ul>
-<li>[Convex Analysis, Rockafellar](https://sheng-cheng-2004.github.io/files/readings/AnalyRock.pdf)</li>
-<li>[Integer Programming]()</li>
-</ul>
+* [Convex Analysis, Rockafellar](https://sheng-cheng-2004.github.io/files/readings/AnalyRock.pdf)
+* [Integer Programming]()
+
 
 # Economics
 ## Papers
 
-<ul>
-<li>[Algorithm Design: a Fairness-Accuracy Frontier, 2023](https://sheng-cheng-2004.github.io/files/readings/algfair.pdf)</li>
-</ul>
+* [Algorithm Design: a Fairness-Accuracy Frontier, 2023](https://sheng-cheng-2004.github.io/files/readings/algfair.pdf)
+
