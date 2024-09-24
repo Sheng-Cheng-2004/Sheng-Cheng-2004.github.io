@@ -14,7 +14,7 @@ Education
 * **B.S. in Economics, Shanghai Jiao Tong University, &ensp; 2022 -**
   * **Courses:** _Optimization Methods, Machine Learning, Regression Analysis, Econometrics, Game Theory, Ordinary Differential Equation, etc._
 * **Exchange, McGill University, &ensp; August, 2024 - December, 2024**
-  * **Courses:** _Combinatorial Optimization, Algorithm and Data Structure, Operation Management, Financial Derivatives._
+  * **Courses:** _Combinatorial Optimization (Adrian Vetta), Honour Discrete Mathematics (Sergey Norin), Honour Analysis, Operation Management (Daniel Ding)._
 
 ---
 
