@@ -42,6 +42,10 @@ Competitions
     Download essay: [_Game Changers: Unraveling the Momentum Mystery in Tennis_](http://Sheng-Cheng-2004.github.io/files/mcm_thesis.pdf)
   
   * [_Honorable Mentioned Prize_](http://Sheng-Cheng-2004.github.io/files/H_prize.pdf)
+ 
+* **18th Challenge Cup (十八届“挑战杯”全国大学生课外学术科技作品竞赛“揭榜挂帅”专项赛)**
+  * “The autonomous navigation and path planning of deep space mining rovers”
+  * [_National First Prize_](http://Sheng-Cheng-2004.github.io/files/challenge.pdf)
 
 Skills
 ======
