@@ -57,7 +57,7 @@ Skills
     
     CET6: 606
 * **Coding**  
-  Python, VBA, Julia, Java, Stata, TB, LaTex, Markdown
+  Python, VBA, Julia, Java, Stata, TB, LaTex, Markdown, Git
 * **Software**  
   Microsoft Office(Excel, Powerpoint, etc.), Wind, TradeBlazer, Photoshop, Lightroom
 
