@@ -8,3 +8,9 @@ redirect_from:
 ---
 
 {% include base_path %}
+
+## 2024 Fall, McGill University, Montreal CA
+
+Combinatorial Optimization -- Instructor: Adrian Vetta  
+Honour Discrete Mathematics (Graph Theory and Combinatorics) -- Instuctor: Sergey Norin
+
