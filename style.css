@@ -379,7 +379,7 @@ h3 {
   border-bottom: 0;
 }
 .project h3 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.18rem;
   font-size: 1.4rem;
 }
 .project p:not(.project-meta) {
@@ -510,6 +510,7 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
@@ -573,4 +574,15 @@ footer {
 
 .abstract-content p {
   color: var(--muted);
+}
+
+.project-byline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.project-byline span {
+  margin: 0 0.45rem;
+  color: var(--gold);
 }
