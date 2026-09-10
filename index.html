@@ -23,7 +23,7 @@
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
+          <!-- <a href="#education">Education</a> -->
           <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </nav>
       </div>
@@ -41,16 +41,16 @@
             <p class="university">Purdue University</p>
             <p class="school">Mitch Daniels School of Business</p>
             <p class="degree">
-              PhD Student in Management <span>(Quantitative Methods)</span>
+              PhD Student in Management (Quantitative Methods)
             </p>
           </div>
 
-          <p class="intro">
+          <!-- <p class="intro">
             I am a PhD student in Quantitative Methods at Purdue University. My
             research interests lie at the intersection of
             <strong>choice modeling</strong>, <strong>optimization</strong>, and
             <strong>decision theory</strong>.
-          </p>
+          </p> -->
 
           <div class="buttons">
             <a
@@ -62,7 +62,7 @@
               View CV
             </a>
 
-            <a class="button secondary" href="mailto:your-email@purdue.edu">
+            <a class="button secondary" href="mailto:cheng907@purdue.edu">
               Email
             </a>
 
@@ -106,17 +106,47 @@
         <h2>About</h2>
 
         <p>
-          I am currently a PhD student in Quantitative Methods at Purdue
-          University's Mitch Daniels School of Business.
-        </p>
-
-        <p>
-          Before joining Purdue, I studied Economics at Shanghai Jiao Tong
-          University and spent an exchange semester at McGill University. My
-          research focuses on mathematical models of individual choice,
-          stochastic choice, and optimization.
+          I am currently a PhD student in Management (Quantitative Methods
+          track) at Purdue University's Mitch Daniels School of Business. Before
+          that, I received a bachelor degree in economics at Shanghai Jiao Tong
+          University, where I am advised by Prof.
+          <a
+            href="https://taotaoohe.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Taotao He</a
+          >
+          and Prof.
+          <a
+            href="https://www.xzlim.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Xi Zhi (RC) Lim</a
+          >. I also spent an exchange semester at McGill University in 2024.
         </p>
       </section>
+
+      <!-- Education -->
+      <!-- <section id="education" class="section"> -->
+      <!-- <h2>Education</h2> -->
+
+      <div class="education-item">
+        <h3>Purdue University</h3>
+        <p>PhD in Management (Quantitative Methods)</p>
+        <span>Aug, 2026 – Present</span>
+      </div>
+
+      <div class="education-item">
+        <h3>Shanghai Jiao Tong University</h3>
+        <p>B.A. in Economics (with distinction)</p>
+        <span>Aug, 2022 – Jun, 2026</span>
+      </div>
+
+      <div class="education-item">
+        <h3>McGill University</h3>
+        <p>Exchange Student</p>
+      </div>
+      <!-- </section> -->
 
       <!-- Research -->
       <section id="research" class="section">
@@ -124,26 +154,20 @@
 
         <div class="research-grid">
           <div class="card">
-            <h3>Choice Modeling</h3>
+            <h3>Economic Theory</h3>
             <p>
-              Random utility models, multinomial logit models, mixture choice
-              models, and stochastic choice.
+              I am particularly interested in Decision theory, Market Design and
+              Network Economics. Building mathematical models to understand how
+              people make decisions and how markets work.
             </p>
           </div>
 
           <div class="card">
             <h3>Optimization</h3>
             <p>
-              Convex optimization, mathematical programming, polyhedral methods,
-              and computational optimization.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Decision Theory</h3>
-            <p>
-              Axiomatic foundations of choice and behavioral representations of
-              decision making.
+              To understand the mathematical structure behind the economic
+              models. And To make models applicable when facing real-world
+              constraints.
             </p>
           </div>
         </div>
@@ -154,20 +178,50 @@
         <h2>Research Projects</h2>
 
         <article class="project">
-          <h3>Choice Branching Models</h3>
+          <h3>Choice Branching, Memory and Response Time</h3>
 
-          <p class="project-meta">Working Paper</p>
+          <div class="project-actions">
+            <p class="project-meta">Undergraduate Thesis</p>
 
-          <p>
-            A stochastic choice framework in which decision makers sequentially
-            search through alternatives and probabilistically branch when
-            preferred alternatives are unavailable.
-          </p>
+            <a
+              class="paper-link"
+              href="assets/choice-branching.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Paper <span aria-hidden="true">↗</span>
+            </a>
+          </div>
 
-          <p>
-            The model connects search behavior, memory, response time, and
-            classical stochastic choice models.
-          </p>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <div class="abstract-content">
+              <p>
+                This paper introduces the Choice Branching Model (CB), a
+                stochastic choice framework that incorporates memory and
+                memory-dependent search into consumer decision-making. Unlike
+                classical models such as the random utility model and
+                multinomial logit model, which treat choice as a one-shot
+                selection, CB models choice as a sequential search-and-branch
+                process. Consumers search for their most preferred alternative;
+                if it is unavailable, they stochastically branch to another
+                alternative and continue searching until an available option is
+                found. The model allows consumers to recall a limited number of
+                previously searched alternatives, with branching behavior
+                determined by memory. We show that different memory levels
+                generate a hierarchy of models with increasing explanatory power
+                and that MNL, Markov chain models, and RUM arise as special
+                cases. We further incorporate response time as an observable
+                outcome, demonstrating that it provides information about both
+                preferences and memory: lower memory levels lead to longer
+                search times, while more preferred alternatives are selected
+                more quickly. Response-time data improve model identification,
+                especially in limited-data settings. Finally, we develop a
+                maximum likelihood estimation procedure and evaluate its
+                performance through numerical experiments using synthetic data.
+              </p>
+            </div>
+          </details>
         </article>
 
         <article class="project">
@@ -183,27 +237,6 @@
         </article>
       </section>
 
-      <!-- Education -->
-      <section id="education" class="section">
-        <h2>Education</h2>
-
-        <div class="education-item">
-          <h3>Purdue University</h3>
-          <p>PhD in Management (Quantitative Methods)</p>
-          <span>2026 – Present</span>
-        </div>
-
-        <div class="education-item">
-          <h3>Shanghai Jiao Tong University</h3>
-          <p>B.A. in Economics</p>
-        </div>
-
-        <div class="education-item">
-          <h3>McGill University</h3>
-          <p>Exchange Student</p>
-        </div>
-      </section>
-
       <!-- Contact -->
       <section class="section contact">
         <h2>Contact</h2>
@@ -216,7 +249,7 @@
 
         <p>
           Email:
-          <a href="mailto:your-email@purdue.edu"> your-email@purdue.edu </a>
+          <a href="mailto:cheng907@purdue.edu"> cheng907@purdue.edu </a>
         </p>
       </section>
     </main>
