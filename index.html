@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body id="top">
+    <a class="skip-link" href="#about">Skip to content</a>
     <header class="navbar">
       <div class="nav-container">
-        <a href="#" class="logo">Sheng Cheng</a>
+        <a href="#top" class="logo" aria-label="Sheng Cheng home">SC</a>
 
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
-          <a href="cv.pdf" target="_blank">CV</a>
+          <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </nav>
       </div>
     </header>
@@ -32,11 +33,15 @@
       <!-- Hero -->
       <section class="hero">
         <div class="hero-text">
-          <p class="eyebrow">PhD Student · Quantitative Methods</p>
+          <p class="eyebrow">Sheng Cheng · Academic profile</p>
 
           <h1>Sheng Cheng</h1>
 
-          <p class="subtitle">Purdue University · Daniels School of Business</p>
+          <div class="affiliation">
+            <p class="university">Purdue University</p>
+            <p class="school">Mitch Daniels School of Business</p>
+            <p class="degree">PhD Student in Management <span>(Quantitative Methods)</span></p>
+          </div>
 
           <p class="intro">
             I am a PhD student in Quantitative Methods at Purdue University. My
@@ -46,7 +51,7 @@
           </p>
 
           <div class="buttons">
-            <a class="button primary" href="cv.pdf" target="_blank">
+            <a class="button primary" href="cv.pdf" target="_blank" rel="noopener noreferrer">
               View CV
             </a>
 
@@ -57,7 +62,7 @@
         </div>
 
         <div class="hero-image">
-          <img src="assets/profile.jpg" alt="Sheng Cheng" />
+          <img src="assets/profile.jpg" alt="Portrait of Sheng Cheng" width="280" height="280" fetchpriority="high" />
         </div>
       </section>
 
@@ -67,7 +72,7 @@
 
         <p>
           I am currently a PhD student in Quantitative Methods at Purdue
-          University's Daniels School of Business.
+          University's Mitch Daniels School of Business.
         </p>
 
         <p>
@@ -149,7 +154,7 @@
 
         <div class="education-item">
           <h3>Purdue University</h3>
-          <p>PhD in Quantitative Methods</p>
+          <p>PhD in Management (Quantitative Methods)</p>
           <span>2026 – Present</span>
         </div>
 
@@ -169,7 +174,7 @@
         <h2>Contact</h2>
 
         <p>
-          Daniels School of Business<br />
+          Mitch Daniels School of Business<br />
           Purdue University<br />
           West Lafayette, Indiana
         </p>
