@@ -3,39 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sheng Cheng</title>
+    <title>About | Sheng Cheng</title>
 
     <meta
       name="description"
       content="Sheng Cheng - PhD student in Quantitative Methods at Purdue University. Research interests include choice modeling, optimization, and decision theory."
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body id="top">
-    <a class="skip-link" href="#about">Skip to content</a>
+  <body id="top" class="about-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="navbar">
       <div class="nav-container">
-        <a href="#top" class="logo" aria-label="Sheng Cheng home">SC</a>
+        <a href="index.html" class="logo" aria-label="Sheng Cheng home">SC</a>
 
         <nav aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
-          <!-- <a href="#education">Education</a> -->
+          <a href="index.html" aria-current="page">About</a>
+          <a href="research.html">Research</a>
           <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- Hero -->
       <section class="hero">
         <div class="hero-text">
-          <p class="eyebrow">Sheng Cheng · Academic profile</p>
+          <p class="eyebrow">Academic profile</p>
 
-          <h1>Sheng Cheng</h1>
+          <h1><span class="name-outline">Sheng</span> <span>Cheng</span></h1>
 
           <div class="affiliation">
             <p class="university">Purdue University</p>
@@ -44,13 +45,6 @@
               PhD Student in Management (Quantitative Methods)
             </p>
           </div>
-
-          <!-- <p class="intro">
-            I am a PhD student in Quantitative Methods at Purdue University. My
-            research interests lie at the intersection of
-            <strong>choice modeling</strong>, <strong>optimization</strong>, and
-            <strong>decision theory</strong>.
-          </p> -->
 
           <div class="buttons">
             <a
@@ -91,8 +85,11 @@
         </div>
 
         <div class="hero-image">
+          <span class="shape-circle" aria-hidden="true"></span>
+          <span class="shape-square" aria-hidden="true"></span>
+          <span class="shape-arc" aria-hidden="true"></span>
           <img
-            src="assets/profile.jpg"
+            src="assets/photos/profile.jpg"
             alt="Portrait of Sheng Cheng"
             width="280"
             height="280"
@@ -103,13 +100,15 @@
 
       <!-- ANCHOR: About -->
       <section id="about" class="section">
-        <h2>About</h2>
+        <h2>About <span class="heading-rule" aria-hidden="true"></span></h2>
+        <div class="about-columns">
+        <div class="biography">
 
         <p>
           I am currently a PhD student in Management (Quantitative Methods
           track) at Purdue University's Mitch Daniels School of Business. Before
           that, I received a bachelor degree in economics at Shanghai Jiao Tong
-          University, where I am advised by Prof.
+          University, where I was advised by Prof.
           <a
             href="https://taotaoohe.github.io/"
             target="_blank"
@@ -124,204 +123,67 @@
             >Xi Zhi (RC) Lim</a
           >. I also spent an exchange semester at McGill University in 2024.
         </p>
-
-        <!-- ANCHOR: Education -->
-        <!-- <section id="education" class="section"> -->
-        <!-- <h2>Education</h2> -->
-        <br />
-
-        <div class="education-item">
-          <h3>Purdue University</h3>
-          <p>PhD in Management (Quantitative Methods)</p>
-          <span>Aug, 2026 – Present</span>
         </div>
 
-        <div class="education-item">
-          <h3>Shanghai Jiao Tong University</h3>
-          <p>B.A. in Economics (with distinction)</p>
-          <span>Aug, 2022 – Jun, 2026</span>
-        </div>
-
-        <div class="education-item">
-          <h3>McGill University</h3>
-          <p>Exchange Student</p>
-        </div>
-        <!-- </section> -->
-      </section>
-
-      <!-- ANCHOR: Research -->
-      <section id="research" class="section">
-        <h2>Research Interests</h2>
-
-        <div class="research-grid">
-          <div class="card">
-            <h3>Economic Theory</h3>
-            <p>
-              I am particularly interested in Decision theory, Market Design and
-              Network Economics. Building mathematical models to understand how
-              people make decisions and how markets work.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Optimization</h3>
-            <p>
-              To understand the mathematical structure behind the economic
-              models. And To make models applicable when facing real-world
-              constraints.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ANCHOR: Projects -->
-      <section id="projects" class="section">
-        <h2>Research Projects</h2>
-
-        <article class="project">
-          <h3>Choice Branching, Memory and Response Time</h3>
-          <p class="project-byline">
-            <b>Sheng Cheng</b><span aria-hidden="true">·</span>
-            May, 2026
-          </p>
-
-          <div class="project-actions">
-            <p class="project-meta">Undergraduate Thesis</p>
-            <a
-              class="paper-link"
-              href="assets/choice-branching.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Paper <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-content">
-              <p>
-                This paper introduces the Choice Branching Model (CB), a
-                stochastic choice framework that incorporates memory and
-                memory-dependent search into consumer decision-making. Unlike
-                classical models such as the random utility model and
-                multinomial logit model, which treat choice as a one-shot
-                selection, CB models choice as a sequential search-and-branch
-                process. Consumers search for their most preferred alternative;
-                if it is unavailable, they stochastically branch to another
-                alternative and continue searching until an available option is
-                found. The model allows consumers to recall a limited number of
-                previously searched alternatives, with branching behavior
-                determined by memory. We show that different memory levels
-                generate a hierarchy of models with increasing explanatory power
-                and that MNL, Markov chain models, and RUM arise as special
-                cases. We further incorporate response time as an observable
-                outcome, demonstrating that it provides information about both
-                preferences and memory: lower memory levels lead to longer
-                search times, while more preferred alternatives are selected
-                more quickly. Response-time data improve model identification,
-                especially in limited-data settings. Finally, we develop a
-                maximum likelihood estimation procedure and evaluate its
-                performance through numerical experiments using synthetic data.
-              </p>
+        <div class="education-timeline" role="group" aria-label="Education">
+          <article class="education-item">
+            <div class="education-logo education-logo-selected">
+              <img
+                class="education-mark"
+                src="assets/logos/purdue-logo-selected.png"
+                alt=""
+                loading="lazy"
+                width="48"
+                height="48"
+              />
             </div>
-          </details>
-        </article>
-
-        <article class="project">
-          <h3>A Polyhedral Approach to Stochastic Choice Models</h3>
-          <p class="project-byline">
-            Mohit Tawarmalani, Taotao He, <b>Sheng Cheng</b
-            ><span aria-hidden="true">·</span>
-            May, 2026
-          </p>
-          <div class="project-actions">
-            <p class="project-meta">Working in Progress</p>
-            <a
-              class="paper-link"
-              href="assets/polyhedral-approach.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Paper <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <!-- <details class="abstract">
-            <summary>Abstract</summary>
-            <div class="abstract-content">
-              <p>
-               
-              </p>
+            <div class="education-content">
+              <h3>Purdue University</h3>
+              <p>PhD in Management (Quantitative Methods)</p>
+              <span class="education-date">Aug, 2026 – Present</span>
             </div>
-          </details> -->
-        </article>
-      </section>
+          </article>
 
-      <!-- <article class="project">
-        <div class="project-header">
-          <div>
-            <h3>Choice Branching Models</h3>
-            <p class="project-byline">
-              <span aria-hidden="true">·</span>
-              2026–Present
-            </p>
-          </div>
+          <article class="education-item">
+            <div class="education-logo">
+              <img
+                class="education-mark"
+                src="assets/logos/sjtu-emblem.png"
+                alt=""
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div class="education-content">
+              <h3>Shanghai Jiao Tong University</h3>
+              <p>B.A. in Economics (with distinction)</p>
+              <span class="education-date">Aug, 2022 – Jun, 2026</span>
+            </div>
+          </article>
 
-          <div class="project-actions">
-            <p class="project-meta">
-              R & R, <i>Review of Economics Studies</i>
-            </p>
-
-            <a
-              class="paper-link"
-              href="assets/choice-branching-models.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+          <article class="education-item">
+            <div
+              class="education-logo education-logo-selected education-logo-mcgill"
             >
-              Read paper <span aria-hidden="true">↗</span>
-            </a>
-          </div>
+              <img
+                class="education-mark"
+                src="assets/logos/mcgill-logo-selected.png"
+                alt=""
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+            </div>
+            <div class="education-content">
+              <h3>McGill University</h3>
+              <p>Exchange Student</p>
+              <span class="education-date">Aug, 2024 – Dec, 2024</span>
+            </div>
+          </article>
         </div>
-
-        <ul class="project-record">
-          <li>
-            <span class="record-label">Current stage</span>
-            <span>Working paper</span>
-          </li>
-
-          <li>
-            <span class="record-label">Presented</span>
-            <span>[Conference or seminar], [Month Year]</span>
-          </li>
-
-          <li>
-            <span class="record-label">Upcoming</span>
-            <span>[Conference or seminar], [Month Year]</span>
-          </li>
-
-          <li>
-            <span class="record-label">Publication</span>
-            <span>In preparation</span>
-          </li>
-        </ul>
-
-        <details class="abstract">
-          <summary>Abstract</summary>
-
-          <div class="abstract-content">
-            <p>
-              A stochastic choice framework in which decision makers
-              sequentially search through alternatives and probabilistically
-              branch when preferred alternatives are unavailable.
-            </p>
-
-            <p>
-              The model connects search behavior, memory, response time, and
-              classical stochastic choice models.
-            </p>
-          </div>
-        </details>
-      </article> -->
+        </div>
+      </section>
 
       <!-- ANCHOR: Contact -->
       <section class="section contact">
