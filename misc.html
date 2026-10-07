@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Misc | Sheng Cheng</title>
+
+    <meta
+      name="description"
+      content="Photographs, personal notes, music, films and books collected by Sheng Cheng."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="room.css" />
+    <script src="records.js" defer></script><script src="misc.js" defer></script>
+  </head>
+
+  <body id="top" class="misc-page room-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo" aria-label="Sheng Cheng home">SC</a>
+
+        <nav aria-label="Main navigation">
+          <a href="index.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="misc.html" aria-current="page">Misc</a>
+          <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="room-main">
+      <header class="room-heading">
+        <div>
+          <!-- <p class="room-kicker">Misc / a room of my own</p> -->
+          <h1>Welcome to <em>My room</em></h1>
+        </div>
+        <p id="room-instruction">
+          Pick a record from the cabinet to start listening.
+        </p>
+      </header>
+      <div class="room-viewport" aria-label="My room">
+        <div class="room-track" id="room-track">
+          <section
+            class="room-scene photo-scene"
+            aria-labelledby="photo-title"
+            inert
+          >
+            <div class="scene-caption">
+              <h2 id="photo-title">Moments</h2>
+              <p>Photo wall</p>
+            </div>
+            <img
+              class="room-cutout photo-wall-art"
+              src="assets/room/photo-wall.png"
+              alt="A collage of photo frames and notes"
+              width="1536"
+              height="1024"
+            />
+            <img class="room-cutout room-plant" src="assets/room/plant.png" alt="A rubber plant in a chrome stand" /><p class="room-paper-note">A wall for little moments.</p>
+          </section>
+          <section
+            class="room-scene music-scene"
+            aria-labelledby="record-title"
+          >
+            <div class="scene-caption">
+              <h2 id="record-title">The listening corner</h2>
+              <p>Records</p>
+            </div>
+            <div class="album-shelf" aria-label="Album on display">
+              <div class="album-rest" id="album-rest">
+                <div class="shelf-empty" id="shelf-empty">
+                  <span aria-hidden="true">♪</span>
+                  <p>Pick a record</p>
+                </div>
+                <img
+                  id="displayed-album"
+                  alt=""
+                  width="600"
+                  height="600"
+                  hidden
+                />
+              </div>
+              <span class="shelf-plank" aria-hidden="true"></span>
+            </div>
+            <div class="turntable-collage">
+              <img
+                class="room-cutout turntable-art"
+                src="assets/room/turntable.png"
+                alt="A Bauhaus record cabinet with a turntable and vinyl collection"
+                width="1536"
+                height="1024"
+                fetchpriority="high"
+              />
+              <button
+                class="record-cabinet-hotspot"
+                id="open-records"
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="record-library"
+              >
+                <span class="cabinet-callout"
+                  ><span aria-hidden="true">↗</span> Pick a record</span
+                >
+              </button>
+              <span class="record-motion" aria-hidden="true"><i></i></span>
+            </div>
+            <div class="turntable-controls">
+              <button
+                id="room-play"
+                class="room-play"
+                type="button"
+                aria-label="Choose a record first"
+                disabled
+              >
+                <span id="room-play-symbol" aria-hidden="true">▶</span>
+              </button>
+              <div>
+                <p id="now-playing-title">Nothing on the turntable, yet.</p>
+                <p id="now-playing-artist">Pick a record from the cabinet.</p>
+              </div>
+            </div>
+          </section>
+          <section
+            class="room-scene book-scene"
+            aria-labelledby="book-title"
+            inert
+          >
+            <div class="scene-caption">
+              <span>03 /</span>
+              <h2 id="book-title">Bookshelf</h2>
+              <p>Books</p>
+            </div>
+            <img
+              class="room-cutout bookshelf-art"
+              src="assets/room/bookshelf.png"
+              alt="A chrome Bauhaus bookshelf with books and ceramics"
+              width="1024"
+              height="1024"
+            />
+            <p class="room-paper-note">A place for favorite stories.</p>
+          </section>
+        </div>
+        <button
+          class="room-arrow room-arrow-left"
+          id="room-prev"
+          type="button"
+          aria-label="Go to Moments"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <button
+          class="room-arrow room-arrow-right"
+          id="room-next"
+          type="button"
+          aria-label="Go to Bookshelf"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div class="room-bottom">
+        <nav class="room-locations" aria-label="Room areas">
+          <button type="button" data-scene="0">Moments</button
+          ><span aria-hidden="true">/</span>
+          <button type="button" data-scene="1" aria-current="true">
+            Record Corner</button
+          ><span aria-hidden="true">/</span>
+          <button type="button" data-scene="2">Bookshelf</button>
+        </nav>
+        <p id="room-status" role="status">
+          Pick a record to add some sound to the room.
+        </p>
+      </div>
+      <div class="room-audio-panel" id="room-audio-panel" hidden>
+        <audio
+          id="song-audio"
+          controls
+          preload="none"
+          aria-label="Song preview player"
+        ></audio>
+        <a
+          id="full-song-link"
+          href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Full song on Apple Music</a
+        >
+        <span>Apple Music preview</span>
+      </div>
+      <noscript
+        ><p class="room-noscript">
+          Enable JavaScript to explore the room, or <a
+            href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
+            >listen to Tell Me on Apple Music</a
+          >.
+        </p></noscript
+      >
+    </main>
+    <dialog
+      id="record-library"
+      class="record-library"
+      aria-labelledby="library-title"
+    >
+      <div class="library-header">
+        <div>
+          <p class="room-kicker">From the record cabinet</p>
+          <h2 id="library-title">Pick a record.</h2>
+        </div>
+        <button
+          class="library-close"
+          id="close-records"
+          type="button"
+          aria-label="Close record collection"
+        >
+          ×
+        </button>
+      </div>
+      <p class="library-intro">
+        Select a record to add some sound to the room.
+      </p>
+      <div class="record-list" id="record-list"></div>
+      <p class="library-footnote">
+        Collected one record at a time. Audio provided as Apple Music previews.
+      </p>
+    </dialog>
+    <footer><p>© 2026 Sheng Cheng</p></footer>
+  </body>
+</html>
