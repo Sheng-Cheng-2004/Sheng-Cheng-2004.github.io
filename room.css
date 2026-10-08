@@ -127,7 +127,7 @@ body.library-open { overflow: hidden; }
 .room-page .navbar { position: relative; flex: none; }
 .room-page .nav-container { min-height: 64px; padding-top: .5rem; padding-bottom: .5rem; }
 .room-main { width: 100%; margin: 0; flex: 1; min-height: 0; display: flex; flex-direction: column; }
-.room-heading { width: 100%; padding: 20px 2rem 8px; flex: none; }
+.room-heading { width: 100%; padding: 36px 2rem 8px; flex: none; }
 .room-heading h1 { font-size: clamp(1.5rem,2.5vw,2rem); }
 .room-viewport { flex: 1; min-height: 340px; height: auto; container-type: size; }
 .scene-caption { top: 4px; }
@@ -153,7 +153,7 @@ body.library-open { overflow: hidden; }
 .room-page footer { width: min(100%,1180px); padding: 6px 2rem; flex: none; }
 @media (max-width: 650px) {
  .room-page { min-height: 720px; }
- .room-heading { padding: 16px 1.25rem 8px; }
+ .room-heading { padding: 28px 1.25rem 8px; }
  #room-instruction { margin: 4px 0 0; }
  .room-viewport { min-height: 360px; }
  .album-shelf { top: 10%; width: 190px; }
