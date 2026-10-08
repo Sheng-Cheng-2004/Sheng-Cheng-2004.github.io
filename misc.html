@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,600&family=Oswald:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -52,13 +52,9 @@
         <div class="room-track" id="room-track">
           <section
             class="room-scene photo-scene"
-            aria-labelledby="photo-title"
+            aria-label="Galleries"
             inert
           >
-            <div class="scene-caption">
-              <h2 id="photo-title">Galleries</h2>
-              <p>照片墙</p>
-            </div>
             <img
               class="room-cutout photo-wall-art"
               src="assets/room/gallery-wall-slim.png"
@@ -75,17 +71,12 @@
           </section>
           <section
             class="room-scene music-scene"
-            aria-labelledby="record-title"
+            aria-label="Record Corner"
           >
-            <div class="scene-caption">
-              <h2 id="record-title">Record Corner</h2>
-              <p>唱片架</p>
-            </div>
             <div class="album-shelf" aria-label="正在展示的专辑">
               <div class="album-rest" id="album-rest">
                 <div class="shelf-empty" id="shelf-empty">
                   <span aria-hidden="true">♪</span>
-                  <p>Pick a record</p>
                 </div>
                 <img
                   id="displayed-album"
@@ -108,12 +99,11 @@
               />
               <button
                 class="record-cabinet-hotspot"
-                id="open-records"
+                id="open-records" aria-label="Pick a record"
                 type="button"
                 aria-haspopup="dialog"
                 aria-controls="record-library"
               >
-                <span class="cabinet-callout"> Pick a record</span>
               </button>
               <span class="record-motion" aria-hidden="true"><i></i></span>
             </div>
@@ -135,14 +125,9 @@
           </section>
           <section
             class="room-scene book-scene"
-            aria-labelledby="book-title"
+            aria-label="Bookshelf"
             inert
           >
-            <div class="scene-caption">
-              <span>03 /</span>
-              <h2 id="book-title">Bookshelf</h2>
-              <p>书架</p>
-            </div>
             <img
               class="room-cutout bookshelf-art"
               src="assets/room/enetri-v2.png"

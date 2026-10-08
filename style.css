@@ -12,7 +12,7 @@
   --line: #d1d1ce;
   --red: #c8102e;
   --blue: #244de9;
-  --display-font: "Fraunces", Georgia, serif;
+  --display-font: var(--heading-font);
   --heading-font: "Oswald", "Arial Narrow", sans-serif;
 }
 * {
@@ -1101,7 +1101,7 @@ footer p {
   right: 0;
   color: var(--blue);
   -webkit-text-stroke: 0;
-  font-family: Georgia, serif;
+  font-family: "DM Sans", Arial, sans-serif;
   font-size: 5.1rem;
   font-weight: 700;
   line-height: 1;
@@ -1251,4 +1251,46 @@ footer p {
   *::after {
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Use Oswald for headings and DM Sans for reading text throughout the site. */
+h1 em,
+h2,
+.room-page .record-copy h3 {
+  font-style: normal;
+}
+.research-statement .research-intro {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-style: normal;
+}
+.about-page #about > h2,
+.about-page .contact > h2 {
+  font-family: var(--heading-font);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.research-page .statement-label,
+.research-page .statement-label em,
+.research-page #projects > h2 {
+  font-family: var(--heading-font);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.about-page .hero h1,
+.about-page .hero h1 em,
+.about-page .hero h1 .name-outline {
+  font-family: var(--heading-font);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--black);
+  -webkit-text-stroke: 0;
+}
+
+.about-page .hero h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
