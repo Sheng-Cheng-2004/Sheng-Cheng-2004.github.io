@@ -125,7 +125,8 @@ function selectRecord(record, coverButton) {
     audio.src = record.preview;
   }
   $("now-playing-title").textContent = record.title;
-  $("now-playing-artist").textContent = `${record.artist} / ${record.album}`;
+  const artistLabel = $("now-playing-artist");
+  if (artistLabel) artistLabel.textContent = `${record.artist} / ${record.album}`;
   $("full-song-link").href = record.url;
   $("room-play").disabled = false;
   $("room-audio-panel").hidden = false;
