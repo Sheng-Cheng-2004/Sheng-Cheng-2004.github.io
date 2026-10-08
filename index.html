@@ -17,6 +17,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home.css" />
+    <script src="home.js" defer></script>
     <script src="page-transition.js" defer></script>
   </head>
 
@@ -37,7 +39,8 @@
 
     <main id="main-content">
       <!-- Hero -->
-      <section class="hero">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-layout">
         <div class="hero-text">
           <h1><span class="name-outline">Sheng</span> <em>Cheng</em></h1>
 
@@ -49,7 +52,54 @@
               PhD Student in Management (Quantitative Methods)
             </p>
           </div>
+        </div>
 
+        <div class="hero-image">
+          <span class="shape-circle" aria-hidden="true"></span>
+          <span class="shape-square" aria-hidden="true"></span>
+          <span class="shape-arc" aria-hidden="true"></span>
+          <img
+            src="assets/photos/profile.jpg"
+            alt="Portrait of Sheng Cheng"
+            width="280"
+            height="280"
+            fetchpriority="high"
+          />
+        </div>
+        </div>
+        <a class="scroll-cue" href="#about" aria-label="Scroll down to About">
+          <span>Scroll to explore</span>
+          <svg viewBox="0 0 24 32" width="24" height="32" aria-hidden="true">
+            <path d="M12 2v26M5 21l7 7 7-7" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- ANCHOR: About -->
+      <div class="about-panel">
+      <section id="about" class="section">
+        <h2>About</h2>
+        <div class="about-columns">
+          <div class="biography">
+            <p>
+              I am currently a PhD student in Management (Quantitative Methods
+              track) at Purdue University's Mitch Daniels School of Business.
+              Before that, I received a bachelor degree in economics at Shanghai
+              Jiao Tong University, where I was advised by Prof.
+              <a
+                href="https://taotaoohe.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Taotao He</a
+              >
+              and Prof.
+              <a
+                href="https://www.xzlim.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Xi Zhi (RC) Lim</a
+              >. I also spent an exchange semester at McGill University in 2024.
+            </p>
           <div class="buttons">
             <a
               class="button primary"
@@ -86,46 +136,6 @@
               LinkedIn
             </a>
           </div>
-        </div>
-
-        <div class="hero-image">
-          <span class="shape-circle" aria-hidden="true"></span>
-          <span class="shape-square" aria-hidden="true"></span>
-          <span class="shape-arc" aria-hidden="true"></span>
-          <img
-            src="assets/photos/profile.jpg"
-            alt="Portrait of Sheng Cheng"
-            width="280"
-            height="280"
-            fetchpriority="high"
-          />
-        </div>
-      </section>
-
-      <!-- ANCHOR: About -->
-      <section id="about" class="section">
-        <h2>About</h2>
-        <div class="about-columns">
-          <div class="biography">
-            <p>
-              I am currently a PhD student in Management (Quantitative Methods
-              track) at Purdue University's Mitch Daniels School of Business.
-              Before that, I received a bachelor degree in economics at Shanghai
-              Jiao Tong University, where I was advised by Prof.
-              <a
-                href="https://taotaoohe.github.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Taotao He</a
-              >
-              and Prof.
-              <a
-                href="https://www.xzlim.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Xi Zhi (RC) Lim</a
-              >. I also spent an exchange semester at McGill University in 2024.
-            </p>
           </div>
 
           <div class="education-timeline" role="group" aria-label="Education">
@@ -202,10 +212,10 @@
           <a href="mailto:cheng907@purdue.edu"> cheng907@purdue.edu </a>
         </p>
       </section>
+      <footer>
+        <p>© 2026 Sheng Cheng</p>
+      </footer>
+      </div>
     </main>
-
-    <footer>
-      <p>© 2026 Sheng Cheng</p>
-    </footer>
   </body>
 </html>

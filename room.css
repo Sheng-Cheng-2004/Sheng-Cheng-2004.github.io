@@ -124,7 +124,7 @@ body.library-open { overflow: hidden; }
 
 /* Fit the room, including its controls, to the available window height. */
 .room-page { height: 100svh; min-height: 640px; display: flex; flex-direction: column; }
-.room-page .navbar { position: relative; flex: none; }
+.room-page .navbar { position: sticky; top: 0; flex: none; }
 .room-page .nav-container { min-height: 64px; padding-top: .5rem; padding-bottom: .5rem; }
 .room-main { width: 100%; margin: 0; flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .room-heading { width: 100%; padding: 36px 2rem 8px; flex: none; }
