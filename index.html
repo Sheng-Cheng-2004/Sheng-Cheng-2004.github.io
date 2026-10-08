@@ -12,8 +12,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,700;1,600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="page-transition.js" defer></script>
   </head>
 
   <body id="top" class="about-page">
@@ -35,9 +39,7 @@
       <!-- Hero -->
       <section class="hero">
         <div class="hero-text">
-          <p class="eyebrow">Academic profile</p>
-
-          <h1><span class="name-outline">Sheng</span> <span>Cheng</span></h1>
+          <h1><span class="name-outline">Sheng</span> <em>Cheng</em></h1>
 
           <div class="affiliation">
             <p class="university">Purdue University</p>
@@ -101,88 +103,87 @@
 
       <!-- ANCHOR: About -->
       <section id="about" class="section">
-        <h2>About <span class="heading-rule" aria-hidden="true"></span></h2>
+        <h2>About</h2>
         <div class="about-columns">
-        <div class="biography">
+          <div class="biography">
+            <p>
+              I am currently a PhD student in Management (Quantitative Methods
+              track) at Purdue University's Mitch Daniels School of Business.
+              Before that, I received a bachelor degree in economics at Shanghai
+              Jiao Tong University, where I was advised by Prof.
+              <a
+                href="https://taotaoohe.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Taotao He</a
+              >
+              and Prof.
+              <a
+                href="https://www.xzlim.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Xi Zhi (RC) Lim</a
+              >. I also spent an exchange semester at McGill University in 2024.
+            </p>
+          </div>
 
-        <p>
-          I am currently a PhD student in Management (Quantitative Methods
-          track) at Purdue University's Mitch Daniels School of Business. Before
-          that, I received a bachelor degree in economics at Shanghai Jiao Tong
-          University, where I was advised by Prof.
-          <a
-            href="https://taotaoohe.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Taotao He</a
-          >
-          and Prof.
-          <a
-            href="https://www.xzlim.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Xi Zhi (RC) Lim</a
-          >. I also spent an exchange semester at McGill University in 2024.
-        </p>
-        </div>
+          <div class="education-timeline" role="group" aria-label="Education">
+            <article class="education-item">
+              <div class="education-logo education-logo-selected">
+                <img
+                  class="education-mark"
+                  src="assets/logos/purdue-logo-selected.png"
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <div class="education-content">
+                <h3>Purdue University</h3>
+                <p>PhD in Management (Quantitative Methods)</p>
+                <span class="education-date">Aug, 2026 – Present</span>
+              </div>
+            </article>
 
-        <div class="education-timeline" role="group" aria-label="Education">
-          <article class="education-item">
-            <div class="education-logo education-logo-selected">
-              <img
-                class="education-mark"
-                src="assets/logos/purdue-logo-selected.png"
-                alt=""
-                loading="lazy"
-                width="48"
-                height="48"
-              />
-            </div>
-            <div class="education-content">
-              <h3>Purdue University</h3>
-              <p>PhD in Management (Quantitative Methods)</p>
-              <span class="education-date">Aug, 2026 – Present</span>
-            </div>
-          </article>
+            <article class="education-item">
+              <div class="education-logo">
+                <img
+                  class="education-mark"
+                  src="assets/logos/sjtu-emblem.png"
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <div class="education-content">
+                <h3>Shanghai Jiao Tong University</h3>
+                <p>B.A. in Economics (with distinction)</p>
+                <span class="education-date">Aug, 2022 – Jun, 2026</span>
+              </div>
+            </article>
 
-          <article class="education-item">
-            <div class="education-logo">
-              <img
-                class="education-mark"
-                src="assets/logos/sjtu-emblem.png"
-                alt=""
-                loading="lazy"
-                width="48"
-                height="48"
-              />
-            </div>
-            <div class="education-content">
-              <h3>Shanghai Jiao Tong University</h3>
-              <p>B.A. in Economics (with distinction)</p>
-              <span class="education-date">Aug, 2022 – Jun, 2026</span>
-            </div>
-          </article>
-
-          <article class="education-item">
-            <div
-              class="education-logo education-logo-selected education-logo-mcgill"
-            >
-              <img
-                class="education-mark"
-                src="assets/logos/mcgill-logo-selected.png"
-                alt=""
-                loading="lazy"
-                width="48"
-                height="48"
-              />
-            </div>
-            <div class="education-content">
-              <h3>McGill University</h3>
-              <p>Exchange Student</p>
-              <span class="education-date">Aug, 2024 – Dec, 2024</span>
-            </div>
-          </article>
-        </div>
+            <article class="education-item">
+              <div
+                class="education-logo education-logo-selected education-logo-mcgill"
+              >
+                <img
+                  class="education-mark"
+                  src="assets/logos/mcgill-logo-selected.png"
+                  alt=""
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                />
+              </div>
+              <div class="education-content">
+                <h3>McGill University</h3>
+                <p>Exchange Student</p>
+                <span class="education-date">Aug, 2024 – Dec, 2024</span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -191,9 +192,8 @@
         <h2>Contact</h2>
 
         <p>
-          Mitch Daniels School of Business<br />
-          Purdue University<br />
-          West Lafayette, Indiana
+          Krannert Building (KRAN) B24D, <br />
+          West Lafayette, IN 47907, USA
         </p>
 
         <p>

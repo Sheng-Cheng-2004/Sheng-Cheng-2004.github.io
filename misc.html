@@ -18,7 +18,9 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="room.css" />
-    <script src="records.js" defer></script><script src="misc.js" defer></script>
+    <script src="page-transition.js" defer></script>
+    <script src="records.js" defer></script>
+    <script src="misc.js" defer></script>
   </head>
 
   <body id="top" class="misc-page room-page">
@@ -46,7 +48,7 @@
           Pick a record from the cabinet to start listening.
         </p>
       </header>
-      <div class="room-viewport" aria-label="My room">
+      <div class="room-viewport" aria-label="我的房间">
         <div class="room-track" id="room-track">
           <section
             class="room-scene photo-scene"
@@ -54,27 +56,32 @@
             inert
           >
             <div class="scene-caption">
-              <h2 id="photo-title">Moments</h2>
-              <p>Photo wall</p>
+              <h2 id="photo-title">Galleries</h2>
+              <p>照片墙</p>
             </div>
             <img
               class="room-cutout photo-wall-art"
-              src="assets/room/photo-wall.png"
-              alt="A collage of photo frames and notes"
+              src="assets/room/gallery-wall-slim.png"
+              alt="Three slim black metal frames arranged at varied heights"
               width="1536"
               height="1024"
             />
-            <img class="room-cutout room-plant" src="assets/room/plant.png" alt="A rubber plant in a chrome stand" /><p class="room-paper-note">A wall for little moments.</p>
+            <img
+              class="room-cutout barcelona-chair"
+              src="assets/room/lounge-chair-orange.png"
+              alt="An orange corduroy lounge chair on a chrome base"
+            />
+            <!-- <p class="room-paper-note">A gallery of little moments.</p> -->
           </section>
           <section
             class="room-scene music-scene"
             aria-labelledby="record-title"
           >
             <div class="scene-caption">
-              <h2 id="record-title">The listening corner</h2>
-              <p>Records</p>
+              <h2 id="record-title">Record Corner</h2>
+              <p>唱片架</p>
             </div>
-            <div class="album-shelf" aria-label="Album on display">
+            <div class="album-shelf" aria-label="正在展示的专辑">
               <div class="album-rest" id="album-rest">
                 <div class="shelf-empty" id="shelf-empty">
                   <span aria-hidden="true">♪</span>
@@ -94,7 +101,7 @@
               <img
                 class="room-cutout turntable-art"
                 src="assets/room/turntable.png"
-                alt="A Bauhaus record cabinet with a turntable and vinyl collection"
+                alt="木质唱片柜，上面放着唱片机，柜内陈列着唱片"
                 width="1536"
                 height="1024"
                 fetchpriority="high"
@@ -106,9 +113,7 @@
                 aria-haspopup="dialog"
                 aria-controls="record-library"
               >
-                <span class="cabinet-callout"
-                  ><span aria-hidden="true">↗</span> Pick a record</span
-                >
+                <span class="cabinet-callout"> Pick a record</span>
               </button>
               <span class="record-motion" aria-hidden="true"><i></i></span>
             </div>
@@ -117,14 +122,14 @@
                 id="room-play"
                 class="room-play"
                 type="button"
-                aria-label="Choose a record first"
+                aria-label="先从唱片柜选择音乐"
                 disabled
               >
                 <span id="room-play-symbol" aria-hidden="true">▶</span>
               </button>
               <div>
                 <p id="now-playing-title">Nothing on the turntable, yet.</p>
-                <p id="now-playing-artist">Pick a record from the cabinet.</p>
+                <!-- <p id="now-playing-artist">Pick a record from the cabinet.</p> -->
               </div>
             </div>
           </section>
@@ -136,23 +141,23 @@
             <div class="scene-caption">
               <span>03 /</span>
               <h2 id="book-title">Bookshelf</h2>
-              <p>Books</p>
+              <p>书架</p>
             </div>
             <img
               class="room-cutout bookshelf-art"
-              src="assets/room/bookshelf.png"
-              alt="A chrome Bauhaus bookshelf with books and ceramics"
+              src="assets/room/enetri-v2.png"
+              alt="An IKEA ENETRI style open bookshelf with oak shelves and grey metal supports"
               width="1024"
               height="1024"
             />
-            <p class="room-paper-note">A place for favorite stories.</p>
+            <!-- <p class="room-paper-note">A place for favorite stories.</p> -->
           </section>
         </div>
         <button
           class="room-arrow room-arrow-left"
           id="room-prev"
           type="button"
-          aria-label="Go to Moments"
+          aria-label="前往照片墙"
         >
           <span aria-hidden="true">←</span>
         </button>
@@ -160,14 +165,14 @@
           class="room-arrow room-arrow-right"
           id="room-next"
           type="button"
-          aria-label="Go to Bookshelf"
+          aria-label="前往书架"
         >
           <span aria-hidden="true">→</span>
         </button>
       </div>
       <div class="room-bottom">
-        <nav class="room-locations" aria-label="Room areas">
-          <button type="button" data-scene="0">Moments</button
+        <nav class="room-locations" aria-label="房间区域">
+          <button type="button" data-scene="0">Galleries</button
           ><span aria-hidden="true">/</span>
           <button type="button" data-scene="1" aria-current="true">
             Record Corner</button
@@ -183,23 +188,23 @@
           id="song-audio"
           controls
           preload="none"
-          aria-label="Song preview player"
+          aria-label="当前歌曲试听播放器"
         ></audio>
         <a
           id="full-song-link"
           href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
           target="_blank"
           rel="noopener noreferrer"
-          >Full song on Apple Music</a
+          >Apple Music Full Song</a
         >
-        <span>Apple Music preview</span>
+        <span>Apple Music Try</span>
       </div>
       <noscript
         ><p class="room-noscript">
-          Enable JavaScript to explore the room, or <a
+          房间互动需要启用 JavaScript。你也可以<a
             href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
-            >listen to Tell Me on Apple Music</a
-          >.
+            >在 Apple Music 收听《告诉我》</a
+          >。
         </p></noscript
       >
     </main>
@@ -217,7 +222,7 @@
           class="library-close"
           id="close-records"
           type="button"
-          aria-label="Close record collection"
+          aria-label="关闭唱片收藏"
         >
           ×
         </button>
@@ -227,7 +232,7 @@
       </p>
       <div class="record-list" id="record-list"></div>
       <p class="library-footnote">
-        Collected one record at a time. Audio provided as Apple Music previews.
+        一张一张，慢慢收藏。播放为 Apple Music 试听。
       </p>
     </dialog>
     <footer><p>© 2026 Sheng Cheng</p></footer>
