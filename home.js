@@ -33,6 +33,9 @@
   const updateIntro = () => {
     const navHeight = navbar ? navbar.offsetHeight : 65;
     document.body.style.setProperty('--nav-height', `${navHeight}px`);
+    // Let a tall introduction scroll fully before pinning its bottom edge.
+    const stickyTop = Math.min(navHeight, window.innerHeight - hero.offsetHeight);
+    hero.style.setProperty('--intro-sticky-top', `${stickyTop}px`);
     const viewport = Math.max(1, window.innerHeight - navHeight);
     const panelTop = panel.getBoundingClientRect().top - navHeight;
     const progress = Math.max(0, Math.min(1, (viewport - panelTop) / (viewport * 0.75)));
@@ -49,6 +52,8 @@
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate);
   window.addEventListener('pageshow', scheduleUpdate);
+  // Portrait and web fonts can change the introduction's height after loading.
+  if ('ResizeObserver' in window) new ResizeObserver(scheduleUpdate).observe(hero);
   motion.addEventListener('change', () => {
     if (motion.matches) {
       document.body.classList.remove(motionClass);

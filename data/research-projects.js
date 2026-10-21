@@ -31,7 +31,7 @@ window.RESEARCH_PROJECTS = [
     meta: "Working in Progress",
     date: "",
     abstract: "",
-    pdf: "assets/papers/polyhedral-approach.pdf",
+    // pdf: "assets/papers/polyhedral-approach.pdf",
     links: [],
   },
 ];
