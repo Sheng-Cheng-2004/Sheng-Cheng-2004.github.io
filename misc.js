@@ -1,6 +1,8 @@
 "use strict";
-// Add future records here; each item has a cover, note, preview and full-song link.
-const records = window.roomRecords;
+import {createRecordLibrary} from "./record-library.js";
+import {nextRecord} from "./record-utils.mjs";
+let records = window.roomRecords;
+let library;
 const $ = (id) => document.getElementById(id);
 const track = $("room-track");
 const scenes = Array.from(document.querySelectorAll(".room-scene"));
@@ -12,8 +14,8 @@ let sceneIndex = 1;
 let selectedRecord = null;
 let playbackRequest = 0;
 let flight = null;
+let listenerHasChosen = false;
 const sceneNames = ["Moments", "Record Corner", "Bookshelf"];
-const instructions = ["Little moments, pinned to the wall.", "Open the cabinet and pick a record.", "A place for favorite stories."];
 
 function alignRoom() {
   const width = scenes[0].getBoundingClientRect().width;
@@ -36,7 +38,6 @@ function changeScene(index) {
   $("room-next").disabled = sceneIndex === 2;
   $("room-prev").setAttribute("aria-label", sceneIndex > 0 ? `Go to ${sceneNames[sceneIndex - 1]}` : "At Moments");
   $("room-next").setAttribute("aria-label", sceneIndex < 2 ? `Go to ${sceneNames[sceneIndex + 1]}` : "At Bookshelf");
-  $("room-instruction").textContent = instructions[sceneIndex];
   alignRoom();
 }
 $("room-prev").addEventListener("click", () => changeScene(sceneIndex - 1));
@@ -53,9 +54,10 @@ $("main-content").addEventListener("keydown", event => {
 function openLibrary() {
   dialog.showModal();
   document.body.classList.add("library-open");
+  library?.refreshIfNeeded();
 }
 $("open-records").addEventListener("click", openLibrary);
-$("close-records").addEventListener("click", () => dialog.close());
+$("close-records").addEventListener("click", () => { if (!library.isBusy()) dialog.close(); });
 dialog.addEventListener("close", () => {
   document.body.classList.remove("library-open");
   $("open-records").focus({preventScroll:true});
@@ -63,7 +65,7 @@ dialog.addEventListener("close", () => {
 // Native <dialog> handles Escape and keeps keyboard focus inside the overlay.
 dialog.addEventListener("click", event => {
   const rect = dialog.getBoundingClientRect();
-  if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  if (!library.isBusy() && event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
 });
 function stopFlight() {
   if (flight) { flight.animation.cancel(); flight.image.remove(); flight = null; }
@@ -76,7 +78,7 @@ function flyToShelf(record, start) {
   displayed.alt = `${record.album} by ${record.artist} — album cover`;
   displayed.hidden = false;
   $("shelf-empty").hidden = true;
-  if (reducedMotion.matches || !Element.prototype.animate) return;
+  if (!start || reducedMotion.matches || !Element.prototype.animate) return;
   const end = displayed.getBoundingClientRect();
   const image = new Image();
   image.src = record.cover;
@@ -93,7 +95,7 @@ function flyToShelf(record, start) {
   const animation = image.animate([
     {transform:"translate(0,0) rotate(-3deg) scale(1)",transformOrigin:"top left"},
     {transform:`translate(${dx * .5}px,${dy * .5 - 50}px) rotate(8deg) scale(.85)`,transformOrigin:"top left",offset:.5},
-    {transform:`translate(${dx}px,${dy}px) rotate(-2deg) scale(${end.width / start.width})`,transformOrigin:"top left"}
+    {transform:`translate(${dx}px,${dy}px) rotate(0deg) scale(${end.width / start.width})`,transformOrigin:"top left"}
   ], {duration:850,easing:"cubic-bezier(.22,.65,.25,1)",fill:"forwards"});
   flight = {image,animation};
   animation.finished.catch(() => {}).finally(() => {
@@ -108,8 +110,9 @@ function setPlaybackState(playing) {
   $("room-play").setAttribute("aria-pressed", String(playing));
 }
 async function playRecord() {
+  if (!selectedRecord) return;
   const request = ++playbackRequest;
-  $("room-status").textContent = "Bringing some sound into the room…";
+  $("room-status").textContent = "Loading preview…";
   try {
     await audio.play();
   } catch {
@@ -118,53 +121,71 @@ async function playRecord() {
     $("room-status").textContent = "Preview unavailable. Open the full song on Apple Music.";
   }
 }
-function selectRecord(record, coverButton) {
-  const start = coverButton.getBoundingClientRect();
+function loadRecord(record, {autoplay = false, start = null} = {}) {
+  ++playbackRequest;
   if (selectedRecord?.id !== record.id) {
+    audio.pause();
     selectedRecord = record;
     audio.src = record.preview;
   }
+  if (audio.ended) audio.currentTime = 0;
   $("now-playing-title").textContent = record.title;
-  const artistLabel = $("now-playing-artist");
-  if (artistLabel) artistLabel.textContent = `${record.artist} / ${record.album}`;
   $("full-song-link").href = record.url;
   $("room-play").disabled = false;
   $("room-audio-panel").hidden = false;
-  // Start inside the click gesture so mobile browsers can allow playback.
-  playRecord();
-  dialog.close();
   flyToShelf(record, start);
+  library?.markSelected();
+  if (autoplay) playRecord();
+  else {
+    setPlaybackState(false);
+    $("room-status").textContent = "Press play to listen.";
+  }
 }
-for (const record of records) {
-  const article = document.createElement("article");
-  article.className = "record-entry";
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "record-pick";
-  button.setAttribute("aria-label", `Play ${record.title} by ${record.artist}`);
-  const cover = new Image();
-  cover.src = record.cover;
-  cover.alt = `${record.album} — album cover`;
-  cover.width = 600; cover.height = 600;
-  const symbol = document.createElement("span");
-  symbol.textContent = "▶"; symbol.setAttribute("aria-hidden", "true");
-  button.append(cover, symbol);
-  button.addEventListener("click", () => selectRecord(record, button));
-  const copy = document.createElement("div"); copy.className = "record-copy";
-  const title = document.createElement("h3"); title.textContent = record.title;
-  const artist = document.createElement("p"); artist.textContent = `${record.artist} / ${record.album}`;
-  const description = document.createElement("p"); description.className = "record-description"; description.textContent = record.description;
-  const link = document.createElement("a"); link.href = record.url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.textContent = "Open in Apple Music ↗";
-  copy.append(title, artist, description, link); article.append(button,copy); $("record-list").append(article);
+function clearTurntable() {
+  ++playbackRequest; audio.pause(); audio.removeAttribute("src"); audio.load();
+  selectedRecord = null; stopFlight(); setPlaybackState(false);
+  $("displayed-album").hidden = true; $("shelf-empty").hidden = false;
+  $("room-play").disabled = true; $("room-audio-panel").hidden = true;
+  $("now-playing-title").textContent = "No records yet.";
+  $("room-status").textContent = "";
 }
+function selectRecord(record, coverButton) {
+  listenerHasChosen = true;
+  const start = coverButton.getBoundingClientRect();
+  // Start inside the click gesture so mobile browsers can allow playback.
+  loadRecord(record, {autoplay: true, start});
+  dialog.close();
+}
+library = createRecordLibrary({
+  initialRecords: records,
+  selectedId: () => selectedRecord?.id,
+  onPick: selectRecord,
+  onChange(next, meta) {
+    const wasPlaying = !audio.paused;
+    const oldIndex = records.findIndex(record => record.id === selectedRecord?.id);
+    records = next;
+    if (!records.length) { clearTurntable(); return; }
+    if (!listenerHasChosen && meta.reason === "load") loadRecord(records[0]);
+    else if (!records.some(record => record.id === selectedRecord?.id)) {
+      loadRecord(records[(meta.removedIndex ?? Math.max(0, oldIndex)) % records.length], {autoplay: wasPlaying});
+    }
+    library?.markSelected();
+  }
+});
 $("room-play").addEventListener("click", () => {
   if (!selectedRecord) return;
+  listenerHasChosen = true;
   if (audio.paused) playRecord();
   else { ++playbackRequest; audio.pause(); }
 });
-audio.addEventListener("play", () => {setPlaybackState(true); $("room-status").textContent = `Previewing: ${selectedRecord.title} · ${selectedRecord.artist}`;});
-audio.addEventListener("pause", () => {setPlaybackState(false); if (!audio.ended && selectedRecord) $("room-status").textContent = "Paused. Pick up where you left off.";});
-audio.addEventListener("ended", () => {setPlaybackState(false); $("room-status").textContent = "Preview ended. Play it again or open the full song on Apple Music.";});
+audio.addEventListener("play", () => {if (!selectedRecord) return; listenerHasChosen = true; setPlaybackState(true); $("room-status").textContent = "";});
+audio.addEventListener("pause", () => {setPlaybackState(false); $("room-status").textContent = "";});
+audio.addEventListener("ended", () => {
+  const next = nextRecord(records, selectedRecord?.id);
+  if (next) loadRecord(next, {autoplay: true});
+  else clearTurntable();
+});
 audio.addEventListener("error", () => {setPlaybackState(false); $("room-status").textContent = "Preview unavailable. Open the full song on Apple Music.";});
 window.addEventListener("resize", stopFlight);
 changeScene(1);
+if (records.length) loadRecord(records[0]);

@@ -1,0 +1,18 @@
+name = "sheng-record-cabinet"
+main = "worker.mjs"
+compatibility_date = "2026-10-29"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGINS = "https://sheng-cheng-2004.github.io,http://127.0.0.1:5500,http://localhost:5500"
+
+[[durable_objects.bindings]]
+name = "CABINET"
+class_name = "RecordCabinet"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RecordCabinet"]
+
+# CABINET_PIN is configured using `wrangler secret put CABINET_PIN`.
+# Never put the PIN in this file or in browser-side code.

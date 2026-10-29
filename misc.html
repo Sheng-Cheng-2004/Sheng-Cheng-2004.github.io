@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="responsive.css" />
     <script src="page-transition.js" defer></script>
     <script src="records.js" defer></script>
-    <script src="misc.js" defer></script>
+    <script src="record-config.js" defer></script>
+    <script src="misc.js" type="module"></script>
   </head>
 
   <body id="top" class="misc-page room-page">
@@ -45,11 +46,8 @@
           <!-- <p class="room-kicker">Misc / a room of my own</p> -->
           <h1>Welcome to <em>My room</em></h1>
         </div>
-        <p id="room-instruction">
-          Pick a record from the cabinet to start listening.
-        </p>
       </header>
-      <div class="room-viewport" aria-label="我的房间">
+      <div class="room-viewport" aria-label="My room">
         <div class="room-track" id="room-track">
           <section
             class="room-scene photo-scene"
@@ -74,7 +72,7 @@
             class="room-scene music-scene"
             aria-label="Record Corner"
           >
-            <div class="album-shelf" aria-label="正在展示的专辑">
+            <div class="album-shelf" aria-label="Selected album">
               <div class="album-rest" id="album-rest">
                 <div class="shelf-empty" id="shelf-empty">
                   <span aria-hidden="true">♪</span>
@@ -93,7 +91,7 @@
               <img
                 class="room-cutout turntable-art"
                 src="assets/room/turntable.png"
-                alt="木质唱片柜，上面放着唱片机，柜内陈列着唱片"
+                alt="A record cabinet with a turntable and a collection of records"
                 width="1536"
                 height="1024"
                 fetchpriority="high"
@@ -105,6 +103,7 @@
                 aria-haspopup="dialog"
                 aria-controls="record-library"
               >
+                <span class="cabinet-cue" aria-hidden="true">Pick a record</span>
               </button>
               <span class="record-motion" aria-hidden="true"><i></i></span>
             </div>
@@ -113,14 +112,13 @@
                 id="room-play"
                 class="room-play"
                 type="button"
-                aria-label="先从唱片柜选择音乐"
+                aria-label="Play a record"
                 disabled
               >
                 <span id="room-play-symbol" aria-hidden="true">▶</span>
               </button>
               <div>
                 <p id="now-playing-title">Nothing on the turntable, yet.</p>
-                <!-- <p id="now-playing-artist">Pick a record from the cabinet.</p> -->
               </div>
             </div>
           </section>
@@ -143,7 +141,7 @@
           class="room-arrow room-arrow-left"
           id="room-prev"
           type="button"
-          aria-label="前往照片墙"
+          aria-label="Go to Galleries"
         >
           <span aria-hidden="true">←</span>
         </button>
@@ -151,13 +149,13 @@
           class="room-arrow room-arrow-right"
           id="room-next"
           type="button"
-          aria-label="前往书架"
+          aria-label="Go to Bookshelf"
         >
           <span aria-hidden="true">→</span>
         </button>
       </div>
       <div class="room-bottom">
-        <nav class="room-locations" aria-label="房间区域">
+        <nav class="room-locations" aria-label="Room areas">
           <button type="button" data-scene="0">Galleries</button
           ><span aria-hidden="true">/</span>
           <button type="button" data-scene="1" aria-current="true">
@@ -166,7 +164,7 @@
           <button type="button" data-scene="2">Bookshelf</button>
         </nav>
         <p id="room-status" role="status">
-          Pick a record to add some sound to the room.
+          Press play to listen.
         </p>
       </div>
       <div class="room-audio-panel" id="room-audio-panel" hidden>
@@ -174,23 +172,23 @@
           id="song-audio"
           controls
           preload="none"
-          aria-label="当前歌曲试听播放器"
+          aria-label="Current song preview"
         ></audio>
         <a
           id="full-song-link"
           href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
           target="_blank"
           rel="noopener noreferrer"
-          >Apple Music Full Song</a
+          aria-label="Listen to the full song on Apple Music"
+          >Apple Music ↗</a
         >
-        <span>Apple Music Try</span>
       </div>
       <noscript
         ><p class="room-noscript">
-          房间互动需要启用 JavaScript。你也可以<a
+          Enable JavaScript to explore the room, or <a
             href="https://music.apple.com/tw/album/%E5%91%8A%E8%A8%B4%E6%88%91/152200437?i=152203057"
-            >在 Apple Music 收听《告诉我》</a
-          >。
+            >listen to Tell Me on Apple Music</a
+          >.
         </p></noscript
       >
     </main>
@@ -201,24 +199,63 @@
     >
       <div class="library-header">
         <div>
-          <p class="room-kicker">From the record cabinet</p>
           <h2 id="library-title">Pick a record.</h2>
         </div>
-        <button
-          class="library-close"
-          id="close-records"
-          type="button"
-          aria-label="关闭唱片收藏"
-        >
-          ×
-        </button>
+        <div class="library-header-actions">
+          <button id="edit-records" class="library-button library-edit-toggle" type="button" aria-expanded="false" aria-controls="library-pin-panel">
+            <svg aria-hidden="true" viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="8" width="12" height="9" rx="2"/><path d="M6.5 8V5a3.5 3.5 0 0 1 7 0v3"/></svg>
+            <span id="edit-records-label">Edit</span>
+          </button>
+          <button
+            class="library-close"
+            id="close-records"
+            type="button"
+            aria-label="Close record cabinet"
+          >
+            ×
+          </button>
+        </div>
       </div>
-      <p class="library-intro">
-        Select a record to add some sound to the room.
-      </p>
+      <form id="library-pin-panel" class="library-panel" hidden>
+        <label for="library-pin">Enter PIN to edit</label>
+        <div class="library-form-row">
+          <input id="library-pin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="current-password" placeholder="6-digit PIN" required aria-describedby="library-message" />
+          <button class="library-button" type="submit">Unlock</button>
+          <button id="cancel-library-pin" class="library-button library-button-quiet" type="button">Cancel</button>
+        </div>
+      </form>
+      <p id="library-edit-note" class="library-help" hidden>↑ ↓ to reorder · Changes save automatically</p>
+      <div class="library-feedback" aria-live="polite" aria-atomic="true">
+        <p id="library-message" role="status"></p>
+        <button id="retry-records" class="library-button library-button-quiet" type="button" hidden>Retry</button>
+        <button id="undo-record-delete" class="library-button library-button-quiet" type="button" hidden>Undo</button>
+      </div>
       <div class="record-list" id="record-list"></div>
+      <div id="library-add-area" class="library-add-area" hidden>
+        <button id="add-record" class="library-add-record" type="button" aria-expanded="false" aria-controls="library-search-panel">
+          <span aria-hidden="true">＋</span><span>Add a record</span>
+        </button>
+        <section id="library-search-panel" class="library-panel" aria-label="Add a record" hidden>
+          <div class="library-panel-heading">
+            <button id="close-record-search" class="library-button library-button-quiet" type="button">Close</button>
+          </div>
+          <form id="library-search-form">
+            <label class="library-field-label" for="record-search">Search or paste an Apple Music song link</label>
+            <div class="library-form-row">
+              <input id="record-search" type="search" maxlength="600" placeholder="Song or artist" required />
+              <select id="record-storefront" aria-label="Apple Music region">
+                <option value="tw">Taiwan</option><option value="us">United States</option><option value="cn">China</option><option value="hk">Hong Kong</option><option value="jp">Japan</option><option value="gb">United Kingdom</option>
+              </select>
+              <button class="library-button" type="submit">Search</button>
+            </div>
+          </form>
+          <a class="library-apple-link" href="https://music.apple.com/" target="_blank" rel="noopener noreferrer">Browse Apple Music ↗</a>
+          <p id="record-search-message" class="library-help" role="status"></p>
+          <div id="record-search-results" class="record-search-results"></div>
+        </section>
+      </div>
       <p class="library-footnote">
-        一张一张，慢慢收藏。播放为 Apple Music 试听。
+        Apple Music previews · Continuous play
       </p>
     </dialog>
     <footer><p>© 2026 Sheng Cheng</p></footer>

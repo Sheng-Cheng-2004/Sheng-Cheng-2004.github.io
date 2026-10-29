@@ -1,0 +1,9 @@
+# Saving-service secrets and local runtime state
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
+*.log

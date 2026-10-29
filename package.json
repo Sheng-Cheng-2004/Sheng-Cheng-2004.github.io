@@ -1,0 +1,9 @@
+{
+  "name": "sheng-personal-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "preview": "node scripts/preview.mjs"
+  }
+}

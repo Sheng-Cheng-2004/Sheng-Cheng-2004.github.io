@@ -1,4 +1,5 @@
-/* Edit this collection to add music. See ADDING-MUSIC.md. */
+/* Initial collection, used until the online cabinet has its first saved edit.
+   Manage the live collection in Misc → record cabinet → Edit. See ADDING-MUSIC.md. */
 window.roomRecords = [{
   id: "tell-me",
   title: "Tell Me",
