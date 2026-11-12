@@ -28,7 +28,7 @@ window.RESEARCH_PROJECTS = [
       "Taotao He",
       { name: "Sheng Cheng", featured: true },
     ],
-    meta: "Working in Progress",
+    meta: "Inactive",
     date: "",
     abstract: "",
     // pdf: "assets/papers/polyhedral-approach.pdf",
