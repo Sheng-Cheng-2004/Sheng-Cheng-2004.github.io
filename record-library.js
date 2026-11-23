@@ -31,7 +31,8 @@ export function createRecordLibrary({initialRecords, onChange, onPick, selectedI
   const $ = id => document.getElementById(id);
   const dialog = $("record-library");
   const api = (window.roomRecordAPI || "").replace(/\/+$/, "");
-  let records = validateRecords(initialRecords);
+  const fallbackRecords = validateRecords(initialRecords);
+  let records = api ? null : fallbackRecords;
   let revision = 0;
   let token = null;
   let busy = false;
@@ -83,8 +84,11 @@ export function createRecordLibrary({initialRecords, onChange, onPick, selectedI
       .forEach(element => { element.disabled = value || element.dataset.boundary === "true"; });
   }
   function applySnapshot(snapshot, meta = {}) {
-    if (snapshot.records !== null) records = validateRecords(snapshot.records);
+    records = snapshot.records === null ? records ?? fallbackRecords : validateRecords(snapshot.records);
     revision = snapshot.revision;
+    publishRecords(meta);
+  }
+  function publishRecords(meta) {
     render();
     onChange(records, meta);
   }
@@ -108,12 +112,12 @@ export function createRecordLibrary({initialRecords, onChange, onPick, selectedI
   }
   function render() {
     $("record-list").replaceChildren();
-    if (!records.length) {
+    if (!records?.length) {
       const empty = document.createElement("p"); empty.className = "library-empty";
-      empty.textContent = "No records yet.";
+      empty.textContent = records === null ? "Loading collection…" : "No records yet.";
       $("record-list").append(empty);
     }
-    records.forEach((record, index) => {
+    records?.forEach((record, index) => {
       const article = document.createElement("article"); article.className = "record-entry"; article.dataset.recordId = record.id;
       const pick = document.createElement("button"); pick.type = "button"; pick.className = "record-pick";
       pick.setAttribute("aria-label", `Play ${record.title} by ${record.artist}`);
@@ -273,21 +277,24 @@ export function createRecordLibrary({initialRecords, onChange, onPick, selectedI
   async function refreshRecords() {
     if (!api || loadingRecords || token || busy) return;
     loadingRecords = true;
-    const generation = sessionGeneration;
     const startedRevision = revision;
     $("retry-records").disabled = true;
     try {
       const snapshot = await request("/records", {authToken: null});
       // A delayed read must not overwrite an edit or a newer authenticated snapshot.
-      if (generation !== sessionGeneration || token || revision !== startedRevision) return;
+      if (token || revision !== startedRevision) return;
       applySnapshot(snapshot, {reason: "load"});
       loadFailed = false; $("retry-records").hidden = true; message("");
     } catch {
-      if (generation !== sessionGeneration || token) return;
+      if (token || revision !== startedRevision) return;
+      if (records === null) {
+        records = fallbackRecords;
+        publishRecords({reason: "fallback"});
+      }
       loadFailed = true; $("retry-records").hidden = false; message("Couldn’t load collection.");
     } finally { loadingRecords = false; $("retry-records").disabled = busy; }
   }
   $("retry-records").addEventListener("click", refreshRecords);
-  const ready = refreshRecords();
-  return {getRecords: () => records, ready, markSelected, isBusy: () => busy, refreshIfNeeded: () => loadFailed && refreshRecords()};
+  const ready = api ? refreshRecords() : Promise.resolve().then(() => onChange(records, {reason: "load"}));
+  return {getRecords: () => records ?? [], ready, markSelected, isBusy: () => busy, refreshIfNeeded: () => loadFailed && refreshRecords()};
 }

@@ -1,7 +1,7 @@
 "use strict";
 import {createRecordLibrary} from "./record-library.js";
 import {nextRecord} from "./record-utils.mjs";
-let records = window.roomRecords;
+let records = [];
 let library;
 const $ = (id) => document.getElementById(id);
 const track = $("room-track");
@@ -157,7 +157,7 @@ function selectRecord(record, coverButton) {
   dialog.close();
 }
 library = createRecordLibrary({
-  initialRecords: records,
+  initialRecords: window.roomRecords,
   selectedId: () => selectedRecord?.id,
   onPick: selectRecord,
   onChange(next, meta) {
@@ -188,4 +188,3 @@ audio.addEventListener("ended", () => {
 audio.addEventListener("error", () => {setPlaybackState(false); $("room-status").textContent = "Preview unavailable. Open the full song on Apple Music.";});
 window.addEventListener("resize", stopFlight);
 changeScene(1);
-if (records.length) loadRecord(records[0]);

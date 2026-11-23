@@ -39,6 +39,21 @@ function setup(t, fetch) {
   return {library, get, changes};
 }
 
+test("a delayed first read shows only the saved order, even if the cabinet closes while waiting", async t => {
+  let finishRead;
+  const actual = [seed[2], seed[0]];
+  const {library, get, changes} = setup(t, () => new Promise(resolve => { finishRead = resolve; }));
+
+  assert.deepEqual(library.getRecords(), []);
+  assert.deepEqual(changes, []);
+  await get("record-library").emit("close");
+  finishRead(Response.json({records: actual, revision: 7}));
+  await library.ready;
+
+  assert.deepEqual(library.getRecords(), actual);
+  assert.deepEqual(changes, [{records: actual, meta: {reason: "load"}}]);
+});
+
 test("failed collection reads show Retry; retry loads the real order and clears the warning", async t => {
   let calls = 0;
   const actual = [seed[2], seed[0]];
@@ -50,6 +65,7 @@ test("failed collection reads show Retry; retry loads the real order and clears 
   assert.equal(get("retry-records").hidden, false);
   assert.equal(get("library-message").textContent, "Couldn’t load collection.");
   assert.deepEqual(library.getRecords(), seed);
+  assert.deepEqual(changes, [{records: seed, meta: {reason: "fallback"}}]);
   await library.refreshIfNeeded();
   assert.deepEqual(library.getRecords(), actual);
   assert.equal(get("retry-records").hidden, true);
